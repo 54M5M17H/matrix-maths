@@ -1,0 +1,11 @@
+{
+	"extends": ["tslint:recommended"],
+	"rules": {
+		"indent": [true, "tabs"],
+		"no-tabs": 0,
+		"class-methods-use-this": 0,
+		"allowTemplateLiterals": true,
+		"quotemark": [ true, "single" ],
+		"arrow-parens": false
+	}
+}
