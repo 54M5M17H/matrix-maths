@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Vector = require('../Vector');
+const { Vector } = require('../index');
 
 describe('Vector Class: Validate Input', () => {
 	it('Should fail: No arguments', () => {
