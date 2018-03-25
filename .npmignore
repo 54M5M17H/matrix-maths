@@ -1,0 +1,8 @@
+node_modules
+.env
+.vscode
+.nyc_output
+TODO.md
+circle.yml
+tests
+.eslintrc.js
