@@ -1,6 +1,5 @@
 const assert = require('assert');
-const Matrix = require('../Matrix');
-const Vector = require('../Vector');
+const { Matrix, Vector } = require('../index');
 
 describe('Matrix Class: Validate new Matrix input', () => {
 	it('Should throw an error -- input array is too short', () => {
