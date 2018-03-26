@@ -1,4 +1,6 @@
+/* eslint no-new: 0 */
 const assert = require('assert');
+const { describe, it } = require('mocha');
 const { Vector } = require('../index');
 
 describe('Vector Class: Validate Input', () => {
@@ -10,7 +12,7 @@ describe('Vector Class: Validate Input', () => {
 
 	it('Should fail: Strings included', () => {
 		assert.throws(() => {
-			new Vector(4, 5,7, 'jh');
+			new Vector(4, 5, 7, 'jh');
 		}, /Vector can only contain numbers/);
 	});
 });
