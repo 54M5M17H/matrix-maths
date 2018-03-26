@@ -2,7 +2,7 @@
 ### Simple Matrix Maths library written in JavaScript
 
 ## Use the library
-`const { Matrix, Vector } = require('/PATH/TO/DIR')`;
+`const { Matrix, Vector } = require('matrix-maths')`;
 
 ## Current Features
 - Create & validate a matrix: `new Matrix` returns a Matrix instance, where each argument should be an array representing a column of your matrix. Each array must be the same length. The matrix data is stored in the instance `data` property. Each column must be the same length.

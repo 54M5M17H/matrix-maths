@@ -1,4 +1,6 @@
+/* eslint no-new: 0 */
 const assert = require('assert');
+const { describe, it } = require('mocha');
 const { Vector } = require('../index');
 
 describe('Vector Class: Validate Input', () => {
