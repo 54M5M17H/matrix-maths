@@ -12,7 +12,7 @@ describe('Vector Class: Validate Input', () => {
 
 	it('Should fail: Strings included', () => {
 		assert.throws(() => {
-			new Vector(4, 5,7, 'jh');
+			new Vector(4, 5, 7, 'jh');
 		}, /Vector can only contain numbers/);
 	});
 });
