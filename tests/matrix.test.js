@@ -1,52 +1,54 @@
+/* eslint no-new: 0 */
 const assert = require('assert');
+const { describe, it } = require('mocha');
 const { Matrix, Vector } = require('../index');
 
 describe('Matrix Class: Validate new Matrix input', () => {
 	it('Should throw an error -- input array is too short', () => {
 		assert.throws(() => {
-			new Matrix([2])
+			new Matrix([2]);
 		}, /Matrix must have at least two columns/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- input does not contain nested arrays', () => {
 		assert.throws(() => {
-			new Matrix(2, 3, 2)
+			new Matrix(2, 3, 2);
 		}, /Matrix must be formed of arrays/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays are empty', () => {
 		assert.throws(() => {
-			new Matrix([], [])
+			new Matrix([], []);
 		}, /Matrix arrays cannot be empty/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays have different lengths', () => {
 		assert.throws(() => {
-			new Matrix([3, 2], [4, 90], [9])
+			new Matrix([3, 2], [4, 90], [9]);
 		}, /Matrix arrays must all be the same length/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays contains string', () => {
 		assert.throws(() => {
-			new Matrix([6, 'h'], [9, 9])
+			new Matrix([6, 'h'], [9, 9]);
 		}, /Matrix columns should comprise numbers only/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays contains array', () => {
 		assert.throws(() => {
-			new Matrix([[5]], [9])
+			new Matrix([[5]], [9]);
 		}, /Matrix columns should comprise numbers only/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays contains object', () => {
 		assert.throws(() => {
-			new Matrix([{}], [9])
+			new Matrix([{}], [9]);
 		}, /Matrix columns should comprise numbers only/, 'Expected validation to fail.');
 	});
 
 	it('Should throw an error -- nested arrays contains Boolean', () => {
 		assert.throws(() => {
-			new Matrix([true], [9])
+			new Matrix([true], [9]);
 		}, /Matrix columns should comprise numbers only/, 'Expected validation to fail.');
 	});
 
@@ -70,7 +72,7 @@ describe('Matrix: multiplyWithVector', () => {
 		const v = new Vector(1, 2);
 		assert.throws(() => {
 			m.multiplyWithVector(v);
-		}, /Vector must have same number of rows as the matrix has columns/)
+		}, /Vector must have same number of rows as the matrix has columns/);
 	});
 
 	it('Should return a new vector', () => {
@@ -80,7 +82,7 @@ describe('Matrix: multiplyWithVector', () => {
 		const newVector = m.multiplyWithVector(v);
 		assert(newVector instanceof Vector);
 		assert.deepStrictEqual(newVector.data, [20, 26]);
-	})
+	});
 });
 
 describe('Matrix: multiplyWithMatrix', () => {
