@@ -1,6 +1,6 @@
 {
 	"name": "matrix-maths",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A simple matrix maths library written in Node.js",
 	"repository": {
 		"type": "git",
