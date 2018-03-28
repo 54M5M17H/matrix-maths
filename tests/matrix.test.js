@@ -109,3 +109,12 @@ describe('Matrix: multiplyWithMatrix', () => {
 		assert.deepStrictEqual(result.data, [[40, 53], [52, 69]]);
 	});
 });
+
+describe('Matrix: transpose', () => {
+	it('Should tranpose', () => {
+		const m = new Matrix([2, 3, 6], [4, 5, 9]);
+		const mT = m.transpose();
+		assert(mT instanceof Matrix);
+		assert.deepStrictEqual(mT.data, [[2, 4], [3, 5], [6, 9]]);
+	});
+});
