@@ -15,5 +15,7 @@ deployment:
     production:
         branch: master
         commands:
+            - git config user.email "sam.smith@oneflow.io"
+            - git config user.name "Sam Smith"
             - npm version patch
             - npm publish
