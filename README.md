@@ -23,6 +23,7 @@ const result = v1.add(v2);
 const v1 = new Vector(1, 2, 3);
 const v2 = new Vector.scale(2);
 // v2 data --> 2, 4, 6
+```
 
 - Multiply a Vector & a Matrix. Returns a new Vector instance. The vector must have as many columns (arguments) as the matrix has rows (array arguments), as a virtue of matrix multiplication.
 ```
