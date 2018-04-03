@@ -13,31 +13,31 @@ test:
         - npm run lint
 
 deployment:
-production:
-    branch: master
-    commands:
-        # tag the master branch and push
-        - git config --global user.email "circleci@varpass.com"
-        - git config --global user.name "Circle CI"
-        - git reset --hard HEAD
-        - git tag "v`grep '"version"' package.json | egrep -o "[0-9]+.[0-9]+.[0-9]+"`"
-        - git push --tags
-        # checkout development and bump the version
-        - git checkout -b circle-ci-version-bump origin/development
-        - git pull
-        - npm --no-git-tag-version version patch
-        - git add package.json
-        - git commit -m "`grep '"version"' package.json | egrep -o "[0-9]+.[0-9]+.[0-9]+"`"
-        - git push -u origin circle-ci-version-bump:development --follow-tags
-        # checkout master again and delete our local branch
-        - git checkout master
-        - git branch -D circle-ci-version-bump
-        - npm publish
-        - git config --global user.email "circleci@varpass.com"
-        - git config --global user.name "Circle CI"
-        - git checkout -b circle-ci-version-bump origin/development
-        - git pull
-        - npm version patch
-        - git push -u origin circle-ci-version-bump:development --follow-tags
-        - git checkout master
-        - git branch -D circle-ci-version-bump
+    production:
+        branch: master
+        commands:
+            # tag the master branch and push
+            - git config --global user.email "circleci@varpass.com"
+            - git config --global user.name "Circle CI"
+            - git reset --hard HEAD
+            - git tag "v`grep '"version"' package.json | egrep -o "[0-9]+.[0-9]+.[0-9]+"`"
+            - git push --tags
+            # checkout development and bump the version
+            - git checkout -b circle-ci-version-bump origin/development
+            - git pull
+            - npm --no-git-tag-version version patch
+            - git add package.json
+            - git commit -m "`grep '"version"' package.json | egrep -o "[0-9]+.[0-9]+.[0-9]+"`"
+            - git push -u origin circle-ci-version-bump:development --follow-tags
+            # checkout master again and delete our local branch
+            - git checkout master
+            - git branch -D circle-ci-version-bump
+            - npm publish
+            - git config --global user.email "circleci@varpass.com"
+            - git config --global user.name "Circle CI"
+            - git checkout -b circle-ci-version-bump origin/development
+            - git pull
+            - npm version patch
+            - git push -u origin circle-ci-version-bump:development --follow-tags
+            - git checkout master
+            - git branch -D circle-ci-version-bump
